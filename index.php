@@ -5,10 +5,11 @@
   <body>
     <?php 
 
-  $string = "11H4M";
+  $string = "11H2M7D";
 
   $extD = preg_match('/[0-9]+D/',$string,$Dia);
   $extDia = $Dia;
+var_dump($Dia[0]);
   $valDia = implode($Dia);
   $extNumDias = explode("D",$valDia);
   $CantDias = $extNumDias[0];
@@ -53,7 +54,27 @@
     $CantMin = 0;
     echo "nose envio ningun Minutos $CantMin";
   }
+echo "<br>";
+$segundos = 60;
+$funcionDias = 24 *$segundos;
+$funcionHoras = 1 *$segundos;
+$funcionMin = 1 *$segundos;
+echo "<br>";
 
+$MinHoras = $funcionDias * $CantDias ;
+echo "$CantDias Dias equivalen en Minutos  $MinHoras";
+echo "<br>";
+
+$HoraMin = $funcionMin * $CantHora;
+echo "$CantHora Horas equivalen en minutos $HoraMin";
+echo "<br>";
+
+echo "Cantidad De Minutos $CantMin";
+echo "<br>";
+
+$total = $MinHoras+$HoraMin+$CantMin;
+echo "la cantidad  Totales En minutos es: $total";
+//30
 
     ?> 
 
