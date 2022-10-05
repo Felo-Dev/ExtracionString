@@ -5,77 +5,26 @@
   <body>
     <?php 
 
-  $string = "11H2M7D";
+  $names = ['Brandon','Jhonatan','Camilo'];
+  $count = 0;
 
-  $extD = preg_match('/[0-9]+D/',$string,$Dia);
-  $extDia = $Dia;
-var_dump($Dia[0]);
-  $valDia = implode($Dia);
-  $extNumDias = explode("D",$valDia);
-  $CantDias = $extNumDias[0];
-  $BusqDia = strpos($string,"D");
+  foreach($names as $dev){
+    $id = rand(1,100);
+    $costo= 0;
 
-
-  if($BusqDia !== false){
-    echo "Cantidad de Dias $CantDias";
-  }else{
-    $CantDias = 0;
-    echo "nose envio ningun Dia $CantDias";
-  }
-  echo "</br>";
-
-  $extD = preg_match('/[0-9]+H/',$string,$Hora);
-  $extHora = $Hora;
-  $valHora = implode($Hora);
-  $extNumHora = explode("H",$valHora);
-  $CantHora = $extNumHora[0];
-  $BusqHora = strpos($string,"H");
-
-
-  if($BusqHora !== false){
-    echo "Cantidad de Hora $CantHora";
-  }else{
-    $CantHora = 0;
-    echo "nose envio ningun Hora $CantHora";
-  }
-  echo "<br>";
-
-  $extM = preg_match('/[0-9]+M/',$string,$Min);
-  $extMin = $Min;
-  $valMin = implode($Min);
-  $extNumMin = explode("M",$valMin);
-  $CantMin = $extNumMin[0];
-  $BusqMin = strpos($string,"M");
-
-
-  if($BusqMin !== false){
-    echo "Cantidad de Minutos $CantMin";
-  }else{
-    $CantMin = 0;
-    echo "nose envio ningun Minutos $CantMin";
-  }
-echo "<br>";
-$segundos = 60;
-$funcionDias = 24 *$segundos;
-$funcionHoras = 1 *$segundos;
-$funcionMin = 1 *$segundos;
-echo "<br>";
-
-$MinHoras = $funcionDias * $CantDias ;
-echo "$CantDias Dias equivalen en Minutos  $MinHoras";
-echo "<br>";
-
-$HoraMin = $funcionMin * $CantHora;
-echo "$CantHora Horas equivalen en minutos $HoraMin";
-echo "<br>";
-
-echo "Cantidad De Minutos $CantMin";
-echo "<br>";
-
-$total = $MinHoras+$HoraMin+$CantMin;
-echo "la cantidad  Totales En minutos es: $total";
-//30
-
+    if($id < 50){
+      $costo = $id * 2;
+    }else{
+         $costo =   $id * 7;
+    };
+    
+    $arrydev = array(" $count: $dev : id = $id :costo = $costo");
+    print_r($arrydev);
+  
+  
+      
+   ++$count;
+}
     ?> 
 
     <!--
